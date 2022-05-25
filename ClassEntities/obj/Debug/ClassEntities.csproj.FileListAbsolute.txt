@@ -1,0 +1,6 @@
+C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\ClassEntities\bin\Debug\ClassEntities.dll
+C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\ClassEntities\bin\Debug\ClassEntities.pdb
+C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\ClassEntities\obj\Debug\ClassEntities.csproj.AssemblyReference.cache
+C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\ClassEntities\obj\Debug\ClassEntities.csproj.CoreCompileInputs.cache
+C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\ClassEntities\obj\Debug\ClassEntities.dll
+C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\ClassEntities\obj\Debug\ClassEntities.pdb
