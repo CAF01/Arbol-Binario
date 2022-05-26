@@ -16,7 +16,7 @@ namespace ConsoleApp1
 
             Nodo nodo = arbol.InsertarNodo(new Nodo(new Componente()
             {
-                Clave = 2
+                Clave = 6
             }), null);
             arbol.InsertarNodo(new Nodo(new Componente() { Clave = 2 }), nodo);
             arbol.InsertarNodo(new Nodo(new Componente() { Clave = 8 }), nodo);
@@ -32,6 +32,15 @@ namespace ConsoleApp1
             arbol.InsertarNodo(new Nodo(new Componente() { Clave = -1 }), nodo);
             arbol.InsertarNodo(new Nodo(new Componente() { Clave = 12 }), nodo);
             arbol.InsertarNodo(new Nodo(new Componente() { Clave = 14 }), nodo);
+
+
+            //Componente abc = arbol.BuscarComponente(nodo, -2);
+            //string jd = abc.Clave.ToString();
+            //arbol.Transversa_preOrder(nodo);
+            //arbol.Transversa_inOrder(nodo);
+            //arbol.Transversa_postOrder(nodo);
+
+
 
             Console.ReadKey();
         }
