@@ -1,0 +1,9 @@
+C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\ClassAccesoDatos\bin\Debug\ClassAccesoDatos.dll
+C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\ClassAccesoDatos\bin\Debug\ClassAccesoDatos.pdb
+C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\ClassAccesoDatos\bin\Debug\ClassEntities.dll
+C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\ClassAccesoDatos\bin\Debug\ClassEntities.pdb
+C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\ClassAccesoDatos\obj\Debug\ClassDataAccess.csproj.AssemblyReference.cache
+C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\ClassAccesoDatos\obj\Debug\ClassDataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\ClassAccesoDatos\obj\Debug\ClassDataAccess.csproj.CopyComplete
+C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\ClassAccesoDatos\obj\Debug\ClassAccesoDatos.dll
+C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\ClassAccesoDatos\obj\Debug\ClassAccesoDatos.pdb

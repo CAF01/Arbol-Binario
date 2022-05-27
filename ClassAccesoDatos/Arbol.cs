@@ -121,7 +121,7 @@ namespace ClassDataAccess
 
         }
 
-        public Componente BuscarComponente(Nodo raiz,int clave)
+        public Componente BuscarNodo(Nodo raiz,int clave)
         {
             Nodo montado;
             Componente encontrado=null;
@@ -136,7 +136,7 @@ namespace ClassDataAccess
                         if(raiz.hijoIzquierdo!=null)
                         {
                             montado = raiz.hijoIzquierdo;
-                            encontrado = BuscarComponente(montado, clave);
+                            encontrado = BuscarNodo(montado, clave);
                         }
                         else
                             return encontrado;
@@ -147,7 +147,7 @@ namespace ClassDataAccess
                         if (raiz.hijoDerecho != null)
                         {
                             montado = raiz.hijoDerecho;
-                            encontrado = BuscarComponente(montado, clave);
+                            encontrado = BuscarNodo(montado, clave);
                         }
                         else
                             return encontrado;
@@ -155,6 +155,52 @@ namespace ClassDataAccess
                 }
             }
             return encontrado;
+        }
+
+        public Nodo EliminarNodo(Nodo raiz, Componente componente)
+        {
+
+            if (raiz == null)
+                return null;
+            if (componente.Clave < raiz.id)
+                raiz.hijoIzquierdo = EliminarNodo(raiz.hijoIzquierdo, componente);
+            if (componente.Clave > raiz.id)
+                raiz.hijoDerecho = EliminarNodo(raiz.hijoDerecho, componente);
+            else
+            {
+                //0 nodos izquierdo & derecho
+                if(raiz.hijoIzquierdo==null && raiz.hijoDerecho==null)
+                {
+                    raiz = null;
+                    return null;
+                }
+                //1 nodo / iz || der
+                
+            }
+            return null;
+        }
+
+        public Nodo BuscarReferenciaAnteriorNodo(Nodo raiz,Componente componente)
+        {
+            Nodo referencia=null;
+            if (raiz == null)
+                return null;
+
+            if (raiz.hijoIzquierdo != null)
+                if (raiz.hijoIzquierdo.id == componente.Clave)
+                    return raiz;
+
+            if (raiz.hijoDerecho != null)
+                if (raiz.hijoDerecho.id == componente.Clave)
+                    return raiz;
+
+            if (raiz.hijoIzquierdo != null && raiz.id < componente.Clave)
+                referencia = BuscarReferenciaAnteriorNodo(raiz, componente);
+
+            if (raiz.hijoDerecho != null && raiz.id > componente.Clave)
+                referencia = BuscarReferenciaAnteriorNodo(raiz, componente);
+
+            return referencia;
         }
 
 
