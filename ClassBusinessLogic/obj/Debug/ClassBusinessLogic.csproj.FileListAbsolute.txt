@@ -1,0 +1,11 @@
+C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\ClassBusinessLogic\bin\Debug\ClassBusinessLogic.dll
+C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\ClassBusinessLogic\bin\Debug\ClassBusinessLogic.pdb
+C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\ClassBusinessLogic\bin\Debug\ClassAccesoDatos.dll
+C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\ClassBusinessLogic\bin\Debug\ClassEntities.dll
+C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\ClassBusinessLogic\bin\Debug\ClassAccesoDatos.pdb
+C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\ClassBusinessLogic\bin\Debug\ClassEntities.pdb
+C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\ClassBusinessLogic\obj\Debug\ClassBusinessLogic.csproj.AssemblyReference.cache
+C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\ClassBusinessLogic\obj\Debug\ClassBusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\ClassBusinessLogic\obj\Debug\ClassBusinessLogic.csproj.CopyComplete
+C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\ClassBusinessLogic\obj\Debug\ClassBusinessLogic.dll
+C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\ClassBusinessLogic\obj\Debug\ClassBusinessLogic.pdb
