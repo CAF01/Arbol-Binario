@@ -47,8 +47,6 @@ namespace WebManejaArbolHardware
             {
                 MessageBox.Show("Error: Campos incompletos");
             }
-
-            
         }
     }
 }

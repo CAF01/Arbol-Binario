@@ -68,9 +68,10 @@ namespace ClassDataAccess
                 if(recorrer==contNodos)
                 {
                     recorrer = 0;
-                    return this.imprimirComponentes(transversa);
                 }
             }
+            if (recorrer == 0 && contNodos > 0)
+                return this.imprimirComponentes(transversa);
             return null;
         }
 
@@ -97,9 +98,11 @@ namespace ClassDataAccess
                 if (recorrer == contNodos)
                 {
                     recorrer = 0;
-                    return this.imprimirComponentes(transversa);
+                    
                 }
             }
+            if(recorrer==0 && contNodos>0)
+                return this.imprimirComponentes(transversa);
             return null;
         }
 
@@ -127,9 +130,10 @@ namespace ClassDataAccess
                 if (recorrer == contNodos)
                 {
                     recorrer = 0;
-                    return this.imprimirComponentes(transversa);
                 }
             }
+            if (recorrer == 0 && contNodos > 0)
+                return this.imprimirComponentes(transversa);
             return null;
 
         }
@@ -202,12 +206,20 @@ namespace ClassDataAccess
                     if(Refanterior!=null)
                     {
                         if(Refanterior.hijoIzquierdo.componente == componente)
+                        {
                             Refanterior.hijoIzquierdo = raiz.hijoDerecho;
+                            Refanterior.hijoIzquierdo.id = raiz.hijoIzquierdo.componente.Clave;
+                        }
+                            
                     }
                     if(Refanterior!=null)
                     {
                         if(Refanterior.hijoDerecho.componente == componente)
+                        {
                             Refanterior.hijoDerecho = raiz.hijoDerecho;
+                            Refanterior.hijoDerecho.id = Refanterior.hijoDerecho.componente.Clave;
+                        }
+                            
                     }
                     //Refanterior.hijoDerecho = raiz.hijoDerecho; ESTE ES EL ORIGINAL
                     //Refanterior.hijoDerecho.hijoDerecho = otro;
@@ -218,12 +230,20 @@ namespace ClassDataAccess
                     if (Refanterior != null && Refanterior.hijoIzquierdo!=null)
                     {
                         if(Refanterior.hijoIzquierdo.componente == componente)
+                        {
                             Refanterior.hijoIzquierdo = raiz.hijoIzquierdo;
+                            Refanterior.hijoIzquierdo.id = Refanterior.hijoIzquierdo.componente.Clave;
+                        }
+                            
                     }
                     if (Refanterior != null && Refanterior.hijoDerecho != null)
                     {
                         if(Refanterior.hijoDerecho.componente == componente)
+                        {
                             Refanterior.hijoDerecho = raiz.hijoIzquierdo;
+                            Refanterior.hijoDerecho.id = Refanterior.hijoDerecho.componente.Clave;
+                        }
+                            
                     }
                     //Refanterior.hijoIzquierdo = raiz.hijoIzquierdo; ORIGINAL
                 }
@@ -242,7 +262,8 @@ namespace ClassDataAccess
                 {
                     Nodo MontadoSobreRaiz = raiz;
                     MontadoSobreRaiz.componente = this.BuscaMinimoValor(raiz.hijoDerecho);
-                    //componente = MontadoSobreRaiz.componente;
+                    MontadoSobreRaiz.id = MontadoSobreRaiz.componente.Clave;
+                    componente = MontadoSobreRaiz.componente;
                     raiz.hijoDerecho = this.EliminarNodo(raiz.hijoDerecho, ref componente);
                     //componente = raiz.componente;
                     componente = null;

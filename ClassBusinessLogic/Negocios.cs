@@ -47,9 +47,18 @@ namespace ClassBusinessLogic
 
         public Nodo EliminarComponente(Componente componente)
         {
+            bool bandera = false;
             Nodo nodoReferencia= this.Arbol.Referencia;
+
+            _=nodoReferencia.id == componente.Clave ? bandera = true : bandera = false;
+
             if (this.Arbol.BuscarNodo(nodoReferencia, componente.Clave) != null)
-                return this.Arbol.EliminarNodo(nodoReferencia, ref componente);
+            {
+                Nodo DevuelveRaiz=this.Arbol.EliminarNodo(nodoReferencia, ref componente);
+                if (bandera)
+                    this.Arbol.Referencia = DevuelveRaiz;
+                return DevuelveRaiz;
+            }
 
             return null;
         }

@@ -34,15 +34,15 @@ namespace ConsoleApp1
             arbol.InsertarNodo(new Nodo(new Componente() { Clave = 14 }), nodo);
 
             //Nodo encontrad = arbol.BuscarReferenciaAnteriorNodo(nodo, new Componente() { Clave = 3 });
-            //Componente hola = new Componente() { Clave =89 };
-            //Nodo eliminar = arbol.EliminarNodo(nodo, ref hola);
-            //arbol.Transversa_inOrder(nodo);
+            Componente hola = new Componente() { Clave = 6 };
+            Nodo eliminar = arbol.EliminarNodo(nodo, ref hola);
+            
 
-            //string[] cadenas = arbol.imprimirComponentes();
-            //foreach (var item in cadenas)
-            //{
-            //    Console.WriteLine(item);
-            //}
+            string[] cadenas = arbol.Transversa_inOrder(nodo, Transversa.InOrder);
+            foreach (var item in cadenas)
+            {
+                Console.WriteLine(item);
+            }
             //Componente abc = arbol.BuscarComponente(nodo, -2);
             //string jd = abc.Clave.ToString();
             //arbol.Transversa_preOrder(nodo);
