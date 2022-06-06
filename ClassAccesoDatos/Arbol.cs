@@ -1,21 +1,22 @@
 ﻿using ClassEntities;
+using System.Drawing;
 
 namespace ClassDataAccess
 {
     public class Arbol
     {
-        //public Nodo Inicio { get; set; }
-
         public Nodo Referencia;
-
 
         private int contNodos=0;
         private int recorrer = 0;
+        private int i= 0;
         private bool inicia = false;
+
         private Componente[] componentesPreOrder;
         private Componente[] componentesInOrder;
         private Componente[] componentesPostOrder;
 
+        private Graficador[] graficador;
 
         public Arbol()
         {
@@ -378,6 +379,72 @@ namespace ClassDataAccess
                     break;
             }
             return cadena;
+        }
+
+
+        //public void GraficarArbol(Nodo raiz)
+        //{
+            //Bitmap bmp = new Bitmap(800,400);
+            //int x1 = 0, x2 = 0;
+            //Graphics g = Graphics.FromImage(bmp);
+            //Pen lapiz = new Pen(Color.Blue, 2);
+
+
+            //if(raiz.componente!=null)
+            //{
+
+            //}
+        //}
+
+        public Graficador[] RecorrerArbol(Nodo raiz,bool dir,int x,int y)
+        {
+            Nodo referencia = raiz;
+            if (i == 0 && raiz != null)
+            {
+                graficador = new Graficador[contNodos];
+                //la mitad de la pantalla, deberia ser el centro
+            }
+
+            if (contNodos > 0 && i < contNodos)
+            {
+                graficador[i] = new Graficador();
+                graficador[i].componente = referencia.componente;
+                graficador[i].x1 = x;
+                graficador[i].y1 = y;
+                if (!dir)
+                {
+                    x -= 15;
+                    graficador[i].x2 = x;
+                }
+                    
+                if (dir)
+                {
+                    x += 15;
+                    graficador[i].x2 = x;
+                }
+                y += 10;
+                graficador[i].y2 = y;
+                if(i==0)
+                {
+                    graficador[i].y2 = y-10;
+                    graficador[i].x2 = x+15;
+                }
+
+                i++;
+
+                if (raiz.hijoIzquierdo != null)
+                {
+                    RecorrerArbol(raiz.hijoIzquierdo,false,x,y);
+                }
+
+                if (raiz.hijoDerecho != null)
+                {
+                    RecorrerArbol(raiz.hijoDerecho,true,x,y);
+                }
+
+            }
+            return graficador;
+
         }
     }
 }

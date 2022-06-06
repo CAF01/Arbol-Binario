@@ -34,15 +34,28 @@ namespace ConsoleApp1
             arbol.InsertarNodo(new Nodo(new Componente() { Clave = 14 }), nodo);
 
             //Nodo encontrad = arbol.BuscarReferenciaAnteriorNodo(nodo, new Componente() { Clave = 3 });
-            Componente hola = new Componente() { Clave = 6 };
-            Nodo eliminar = arbol.EliminarNodo(nodo, ref hola);
-            
+            //Componente hola = new Componente() { Clave = 8 };
 
-            string[] cadenas = arbol.Transversa_inOrder(nodo, Transversa.InOrder);
-            foreach (var item in cadenas)
-            {
-                Console.WriteLine(item);
-            }
+
+            Graficador[] grafo = arbol.RecorrerArbol(nodo, false,100,35);
+            string a = "hola";
+            //string[] cadenas = arbol.Transversa_inOrder(nodo, Transversa.InOrder);
+            //foreach (var item in cadenas)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //Console.WriteLine("||||||||||||||||||||||||||");
+            //cadenas = arbol.Transversa_preOrder(nodo, Transversa.PreOrder);
+            //foreach (var item in cadenas)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //Console.WriteLine("||||||||||||||||||||||||||");
+            //cadenas = arbol.Transversa_postOrder(nodo, Transversa.PostOrder);
+            //foreach (var item in cadenas)
+            //{
+            //    Console.WriteLine(item);
+            //}
             //Componente abc = arbol.BuscarComponente(nodo, -2);
             //string jd = abc.Clave.ToString();
             //arbol.Transversa_preOrder(nodo);

@@ -26,21 +26,26 @@
 
                 <asp:TextBox ID="TB1" runat="server"></asp:TextBox>
                 <br />
+                <br />
                 Categoria:
 
                 <asp:TextBox ID="TB2" runat="server"></asp:TextBox>
+                <br />
                 <br />
                 Marca:
 
                 <asp:TextBox ID="TB3" runat="server"></asp:TextBox>
                 <br />
+                <br />
                 Modelo:
 
                 <asp:TextBox ID="TB4" runat="server"></asp:TextBox>
                 <br />
+                <br />
                 Serie:
 
                 <asp:TextBox ID="TB5" runat="server"></asp:TextBox>
+                <br />
                 <br />
                 Descripción:
                 <asp:TextBox ID="TB6" runat="server"></asp:TextBox>
