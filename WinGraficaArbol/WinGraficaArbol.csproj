@@ -79,5 +79,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassAccesoDatos\ClassDataAccess.csproj">
+      <Project>{9910D50F-3055-4A7C-82F4-E62AE7891B5A}</Project>
+      <Name>ClassDataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClassEntities\ClassEntities.csproj">
+      <Project>{45A5DCBB-4E7D-458F-A750-31C83994AC40}</Project>
+      <Name>ClassEntities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

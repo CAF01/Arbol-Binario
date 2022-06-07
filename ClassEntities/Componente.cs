@@ -8,8 +8,8 @@
         public string Modelo { get; set; }
         public string Serie { get; set; }
         public string Descripcion { get; set; }
-        //public object Imagen_uno { get; set; }
-        //public object Imagen_dos { get; set; }
+        public string Imagen_uno { get; set; }
+        public string Imagen_dos { get; set; }
 
 
         public Componente RetornarDatos()
@@ -21,7 +21,9 @@
                 Marca = Marca,
                 Modelo = Modelo,
                 Serie = Serie,
-                Descripcion = Descripcion
+                Descripcion = Descripcion,
+                Imagen_uno = Imagen_uno,
+                Imagen_dos = Imagen_dos
             };
         }
 

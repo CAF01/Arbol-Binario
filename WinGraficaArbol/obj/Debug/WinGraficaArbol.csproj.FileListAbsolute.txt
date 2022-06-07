@@ -1,11 +1,16 @@
 C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\WinGraficaArbol\bin\Debug\WinGraficaArbol.exe.config
 C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\WinGraficaArbol\bin\Debug\WinGraficaArbol.exe
 C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\WinGraficaArbol\bin\Debug\WinGraficaArbol.pdb
+C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\WinGraficaArbol\bin\Debug\ClassAccesoDatos.dll
+C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\WinGraficaArbol\bin\Debug\ClassEntities.dll
+C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\WinGraficaArbol\bin\Debug\ClassAccesoDatos.pdb
+C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\WinGraficaArbol\bin\Debug\ClassEntities.pdb
 C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\WinGraficaArbol\obj\Debug\WinGraficaArbol.csproj.AssemblyReference.cache
 C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\WinGraficaArbol\obj\Debug\WinGraficaArbol.csproj.SuggestedBindingRedirects.cache
 C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\WinGraficaArbol\obj\Debug\WinGraficaArbol.Form1.resources
 C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\WinGraficaArbol\obj\Debug\WinGraficaArbol.Properties.Resources.resources
 C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\WinGraficaArbol\obj\Debug\WinGraficaArbol.csproj.GenerateResource.cache
 C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\WinGraficaArbol\obj\Debug\WinGraficaArbol.csproj.CoreCompileInputs.cache
+C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\WinGraficaArbol\obj\Debug\WinGraficaArbol.csproj.CopyComplete
 C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\WinGraficaArbol\obj\Debug\WinGraficaArbol.exe
 C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\WinGraficaArbol\obj\Debug\WinGraficaArbol.pdb

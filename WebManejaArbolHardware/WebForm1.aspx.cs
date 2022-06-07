@@ -1,11 +1,6 @@
 ﻿using ClassBusinessLogic;
 using ClassEntities;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace WebManejaArbolHardware
@@ -26,11 +21,14 @@ namespace WebManejaArbolHardware
             }
         }
 
+
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if(!String.IsNullOrEmpty(TB1.Text) || !String.IsNullOrEmpty(TB2.Text) || !String.IsNullOrEmpty(TB3.Text) ||
+            if (!String.IsNullOrEmpty(TB1.Text) || !String.IsNullOrEmpty(TB2.Text) || !String.IsNullOrEmpty(TB3.Text) ||
                 !String.IsNullOrEmpty(TB4.Text) || !String.IsNullOrEmpty(TB5.Text) || !String.IsNullOrEmpty(TB6.Text))
             {
+                //guardarImgs
+
                 this.Negocios.AgregarComponente(new Componente()
                 {
                     Clave = Convert.ToInt32(TB1.Text),
@@ -40,12 +38,33 @@ namespace WebManejaArbolHardware
                     Serie = TB5.Text,
                     Descripcion = TB6.Text
                 });
-                MessageBox.Show("Éxito: Componente agregado");
+                this.EnviaAlertas("¡Éxito!", "Componente agregado.", "success");
                 TB1.Text = ""; TB2.Text = ""; TB3.Text = ""; TB4.Text = ""; TB5.Text = ""; TB6.Text = "";
             }
             else
             {
-                MessageBox.Show("Error: Campos incompletos");
+                this.EnviaAlertas("¡Error!", "Verifique los campos.", "error");
+            }
+
+        }
+
+        public void EnviaAlertas(string titulo,string msg,string tipo)
+        {
+            Page.ClientScript.RegisterStartupScript(this.GetType(), titulo, "registro('"+titulo+"','" + msg + "','"+tipo+"')", true);
+        }
+
+        public void GuardarImagenes()
+        {
+            if (FileUpload1.HasFile || FileUpload2.HasFile)
+            {
+                if (FileUpload1.HasFile)
+                {
+
+                }
+                if (FileUpload2.HasFile)
+                {
+
+                }
             }
         }
     }

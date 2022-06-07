@@ -396,7 +396,7 @@ namespace ClassDataAccess
             //}
         //}
 
-        public Graficador[] RecorrerArbol(Nodo raiz,bool dir,int x,int y)
+        public Graficador[] RecorrerArbol(Nodo raiz,bool dir,float x,float y)
         {
             Nodo referencia = raiz;
             if (i == 0 && raiz != null)
@@ -413,23 +413,41 @@ namespace ClassDataAccess
                 graficador[i].y1 = y;
                 if (!dir)
                 {
-                    x -= 15;
+                    x -= 65;
                     graficador[i].x2 = x;
                 }
                     
                 if (dir)
                 {
-                    x += 15;
+                    x += 65;
                     graficador[i].x2 = x;
                 }
-                y += 10;
+                y += 60;
+
                 graficador[i].y2 = y;
                 if(i==0)
                 {
-                    graficador[i].y2 = y-10;
-                    graficador[i].x2 = x+15;
+                    x += 65;
+                    y -= 60;
+                    graficador[i].y2 = y;
+                    graficador[i].x2 = x;
                 }
-
+                if(this.Referencia.hijoIzquierdo!=null)
+                    if(this.Referencia.hijoIzquierdo.id==raiz.id)
+                    {
+                        x -= 155;
+                        y += 70;
+                        graficador[i].y2 = y;
+                        graficador[i].x2 = x;
+                    }
+                if(this.Referencia.hijoDerecho!=null)
+                    if(this.Referencia.hijoDerecho.id==raiz.id)
+                    {
+                        x += 155;
+                        y += 70;
+                        graficador[i].y2 = y;
+                        graficador[i].x2 = x;
+                    }
                 i++;
 
                 if (raiz.hijoIzquierdo != null)
