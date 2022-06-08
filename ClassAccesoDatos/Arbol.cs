@@ -46,7 +46,7 @@ namespace ClassDataAccess
 
         }
 
-        public string[] Transversa_preOrder(Nodo raiz, Transversa transversa)
+        public Componente[] Transversa_preOrder(Nodo raiz, Transversa transversa)
         {
             if (recorrer == 0)
                 componentesPreOrder = new Componente[contNodos];
@@ -76,7 +76,7 @@ namespace ClassDataAccess
             return null;
         }
 
-        public string[] Transversa_inOrder(Nodo raiz, Transversa transversa)
+        public Componente[] Transversa_inOrder(Nodo raiz, Transversa transversa)
         {
             if (recorrer == 0)
                 componentesInOrder = new Componente[contNodos];
@@ -107,7 +107,7 @@ namespace ClassDataAccess
             return null;
         }
 
-        public string[] Transversa_postOrder(Nodo raiz,Transversa transversa)
+        public Componente[] Transversa_postOrder(Nodo raiz,Transversa transversa)
         {
             if (recorrer == 0)
                 componentesPostOrder = new Componente[contNodos];
@@ -342,43 +342,45 @@ namespace ClassDataAccess
 
         }
 
-        public string[] imprimirComponentes(Transversa transversa)
+        public Componente[] imprimirComponentes(Transversa transversa)
         {
-            string[] cadena=null;
             switch (transversa)
             {
                 case Transversa.PreOrder:
                     if (this.componentesPreOrder != null)
                     {
-                        cadena = new string[contNodos];
-                        for (int a = 0; a < contNodos; a++)
-                        {
-                            cadena[a] = this.componentesPreOrder[a].Clave.ToString();
-                        }
+                        return this.componentesPreOrder;
+                        //cadena = new string[contNodos];
+                        //for (int a = 0; a < contNodos; a++)
+                        //{
+                        //    cadena[a] = this.componentesPreOrder[a].Clave.ToString();
+                        //}
                     }
                     break;
                 case Transversa.InOrder:
                     if (this.componentesInOrder != null)
                     {
-                        cadena = new string[contNodos];
-                        for (int a = 0; a < contNodos; a++)
-                        {
-                            cadena[a] = this.componentesInOrder[a].Clave.ToString();
-                        }
+                        return this.componentesInOrder;
+                        //cadena = new string[contNodos];
+                        //for (int a = 0; a < contNodos; a++)
+                        //{
+                        //    cadena[a] = this.componentesInOrder[a].Clave.ToString();
+                        //}
                     }
                     break;
                 case Transversa.PostOrder:
                     if (this.componentesPostOrder != null)
                     {
-                        cadena = new string[contNodos];
-                        for (int a = 0; a < contNodos; a++)
-                        {
-                            cadena[a] = this.componentesPostOrder[a].Clave.ToString();
-                        }
+                        return this.componentesPostOrder;
+                        //cadena = new string[contNodos];
+                        //for (int a = 0; a < contNodos; a++)
+                        //{
+                        //    cadena[a] = this.componentesPostOrder[a].Clave.ToString();
+                        //}
                     }
                     break;
             }
-            return cadena;
+            return null;
         }
 
 

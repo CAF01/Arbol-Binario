@@ -11,23 +11,35 @@ namespace ClassBusinessLogic
             this.Arbol = new Arbol();
         }
 
+        public bool ContieneValores()
+        {
+            bool flag;
+            _ = this.Arbol.Referencia != null ? flag=true : flag=false;
+            return flag;
+        }
+
+        public Nodo DevuelveRaizOriginal()
+        {
+            return this.Arbol.Referencia;
+        }
+
         public Nodo AgregarComponente(Componente componente)
         {
             Nodo nodoReferencia = this.Arbol.Referencia;
             return this.Arbol.InsertarNodo(new Nodo(componente), nodoReferencia);
         }
 
-        public string[] MostrarComponentesPorOrden(Transversa transversa)
+        public Componente[] MostrarComponentesPorOrden(Transversa transversa)
         {
             Nodo nodoReferencia = this.Arbol.Referencia;
-            string[] result=null;
+            Componente[] result=null;
             switch (transversa)
             {
                 case Transversa.PreOrder:
                     result= this.Arbol.Transversa_preOrder(nodoReferencia,transversa);
                     break;
                 case Transversa.InOrder:
-                    result= this.Arbol.Transversa_preOrder(nodoReferencia, transversa);
+                    result= this.Arbol.Transversa_inOrder(nodoReferencia, transversa);
                     break;
                 case Transversa.PostOrder:
                     result = this.Arbol.Transversa_postOrder(nodoReferencia, transversa);

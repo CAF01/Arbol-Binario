@@ -1,10 +1,7 @@
 ﻿using ClassDataAccess;
 using ClassEntities;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.Json;
 
 namespace ConsoleApp1
 {
@@ -36,9 +33,15 @@ namespace ConsoleApp1
             //Nodo encontrad = arbol.BuscarReferenciaAnteriorNodo(nodo, new Componente() { Clave = 3 });
             //Componente hola = new Componente() { Clave = 8 };
 
+            string Json = JsonSerializer.Serialize<Nodo>(nodo);
+            
+            
+            Nodo nuevo=JsonSerializer.Deserialize<Nodo>(Json);
 
-            Graficador[] grafo = arbol.RecorrerArbol(nodo, false,100,35);
-            string a = "hola";
+            //Graficador[] grafo = arbol.RecorrerArbol(nodo, false,100,35);
+
+
+
             //string[] cadenas = arbol.Transversa_inOrder(nodo, Transversa.InOrder);
             //foreach (var item in cadenas)
             //{

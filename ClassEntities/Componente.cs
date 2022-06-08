@@ -18,7 +18,7 @@
             {
                 Clave = Clave,
                 Categoria = Categoria,
-                Marca = Marca,
+                Marca=Marca,
                 Modelo = Modelo,
                 Serie = Serie,
                 Descripcion = Descripcion,
