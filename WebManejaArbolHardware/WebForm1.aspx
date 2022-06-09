@@ -31,7 +31,7 @@
             <div class="container-fluid">
                <a class="navbar-brand" href="WebForm2.aspx">
                     <img src="img/style/hard.png" alt="" width="50" height="37" class="d-inline-block align-text-top"/>
-                        Arbol Binario - Hardware
+                        Árbol Binario - Hardware
                </a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -39,16 +39,16 @@
               <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="WebForm1.aspx">Insertar componentes</a>
+                    <a class="nav-link active" aria-current="page" href="WebForm1.aspx">Agregar componentes</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="WebForm3.aspx">Recorridos</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Buscar & eliminar</a>
+                    <a class="nav-link" href="WebForm4.aspx">Buscar & eliminar</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Graficación</a>
+                    <a class="nav-link" href="WebForm5.aspx">Graficación</a>
                   </li>
                 </ul>
               </div>

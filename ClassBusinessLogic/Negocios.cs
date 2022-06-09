@@ -5,7 +5,7 @@ namespace ClassBusinessLogic
 {
     public class Negocios
     {
-        private Arbol Arbol;
+        public Arbol Arbol;
         public Negocios()
         {
             this.Arbol = new Arbol();
@@ -18,9 +18,14 @@ namespace ClassBusinessLogic
             return flag;
         }
 
-        public Nodo DevuelveRaizOriginal()
+        public string RespaldaInformacion(string NomPath)
         {
-            return this.Arbol.Referencia;
+            return this.Arbol.RespaldarInformacion(NomPath);
+        }
+
+        public bool RestaurarInformacion(string JsonFile)
+        {
+            return this.Arbol.RestaurarInformacion(JsonFile);
         }
 
         public Nodo AgregarComponente(Componente componente)
@@ -57,22 +62,36 @@ namespace ClassBusinessLogic
             return this.Arbol.BuscarNodo(nodoReferencia, clave);
         }
 
-        public Nodo EliminarComponente(Componente componente)
+        public bool EliminarComponente(Componente componente)
         {
-            bool bandera = false;
-            Nodo nodoReferencia= this.Arbol.Referencia;
-
-            _=nodoReferencia.id == componente.Clave ? bandera = true : bandera = false;
-
-            if (this.Arbol.BuscarNodo(nodoReferencia, componente.Clave) != null)
+            if (this.ContieneValores())
             {
-                Nodo DevuelveRaiz=this.Arbol.EliminarNodo(nodoReferencia, ref componente);
-                if (bandera)
-                    this.Arbol.Referencia = DevuelveRaiz;
-                return DevuelveRaiz;
-            }
+                bool bandera = false;
+                Nodo nodoReferencia = this.Arbol.Referencia;
 
-            return null;
+                _ = nodoReferencia.id == componente.Clave ? bandera = true : bandera = false;
+
+                if (this.Arbol.BuscarNodo(nodoReferencia, componente.Clave) != null)
+                {
+                    Nodo DevuelveRaiz = this.Arbol.EliminarNodo(nodoReferencia, ref componente);
+                    if (bandera)
+                    {
+                        this.Arbol.Referencia = DevuelveRaiz;
+                    }
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public Graficador[] ObtenerCoordenadas(int x,int y)
+        {
+            Graficador[] graficadors=null;
+            if(this.Arbol.Referencia!=null)
+            {
+                return this.Arbol.RecorrerArbol(this.Arbol.Referencia, false, x, y);
+            }
+            return graficadors;
         }
     }
 }

@@ -33,10 +33,10 @@ namespace ConsoleApp1
             //Nodo encontrad = arbol.BuscarReferenciaAnteriorNodo(nodo, new Componente() { Clave = 3 });
             //Componente hola = new Componente() { Clave = 8 };
 
-            string Json = JsonSerializer.Serialize<Nodo>(nodo);
+            string Json = JsonSerializer.Serialize<Arbol>(arbol);
             
             
-            Nodo nuevo=JsonSerializer.Deserialize<Nodo>(Json);
+            Arbol nuevo=JsonSerializer.Deserialize<Arbol>(Json);
 
             //Graficador[] grafo = arbol.RecorrerArbol(nodo, false,100,35);
 

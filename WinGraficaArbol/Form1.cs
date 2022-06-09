@@ -56,8 +56,7 @@ namespace WinGraficaArbol
             //Componente hola = new Componente() { Clave = 8 };
 
 
-            //Graficador[] grafo = arbol.RecorrerArbol(nodo, false, 350, 80);
-            //string a = "hola";
+            
 
             Pen lap = new Pen(Color.CornflowerBlue, 2);
             Pen lazo = new Pen(Color.Black, 2);
@@ -76,6 +75,9 @@ namespace WinGraficaArbol
                 x += 120;
             }
 
+
+            //Graficador[] grafo = arbol.RecorrerArbol(nodo, false, 350, 80);
+            //string a = "hola";
 
             //foreach (var item in grafo)
             //{

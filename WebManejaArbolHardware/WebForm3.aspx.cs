@@ -1,4 +1,5 @@
 ﻿using ClassBusinessLogic;
+using ClassEntities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,6 +36,9 @@ namespace WebManejaArbolHardware
                 this.Image1.ImageUrl = "Recorridos.aspx";
                 this.Image2.ImageUrl = "Recorridos1.aspx";
                 this.Image3.ImageUrl = "Recorridos2.aspx";
+                this.Label1.Text = this.ObtenerRecorrido(Transversa.PreOrder);
+                this.Label2.Text = this.ObtenerRecorrido(Transversa.InOrder);
+                this.Label3.Text = this.ObtenerRecorrido(Transversa.PostOrder);
             }
             else
             {
@@ -46,6 +50,21 @@ namespace WebManejaArbolHardware
         {
             Page.ClientScript.RegisterStartupScript(this.GetType(), titulo, String.Format("registro('{0}','{1}','{2}')", titulo, msg, tipo), true);
         }
+
+        public string ObtenerRecorrido(Transversa transversa)
+        {
+            string cad = "Recorrido: ";
+            Componente[] componentes=this.Negocios.MostrarComponentesPorOrden(transversa);
+            foreach (var item in componentes)
+            {
+                if (item.Clave == componentes[componentes.Length-1].Clave)
+                    cad += String.Format("[{0}]", item.Clave);
+                else
+                    cad += String.Format("[{0}] , ", item.Clave);
+            }
+            return cad;
+        }
+
 
 
 

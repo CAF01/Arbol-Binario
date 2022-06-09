@@ -16,7 +16,7 @@ namespace WebManejaArbolHardware
         Negocios Negocios;
         protected void Page_Load(object sender, EventArgs e)
         {
-            Bitmap bitmap = new Bitmap(600, 110);
+            Bitmap bitmap = new Bitmap(2200, 110);
 
             Graphics g = Graphics.FromImage(bitmap);
 

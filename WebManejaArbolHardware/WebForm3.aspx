@@ -28,7 +28,7 @@
                             <div class="container-fluid">
                                    <a class="navbar-brand" href="WebForm2.aspx">
                                         <img src="img/style/hard.png" alt="" width="50" height="37" class="d-inline-block align-text-top"/>
-                                            Arbol Binario - Hardware
+                                            Árbol Binario - Hardware
                                    </a>
                                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                                     <span class="navbar-toggler-icon"></span>
@@ -36,16 +36,16 @@
                                   <div class="collapse navbar-collapse" id="navbarColor01">
                                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                           <li class="nav-item">
-                                            <a class="nav-link" aria-current="page" href="WebForm1.aspx">Insertar componentes</a>
+                                            <a class="nav-link" aria-current="page" href="WebForm1.aspx">Agregar componentes</a>
                                           </li>
                                           <li class="nav-item">
                                             <a class="nav-link active" href="WebForm3.aspx">Recorridos</a>
                                           </li>
                                           <li class="nav-item">
-                                            <a class="nav-link" href="#">Buscar & eliminar</a>
+                                            <a class="nav-link" href="WebForm4.aspx">Buscar & eliminar</a>
                                           </li>
                                           <li class="nav-item">
-                                            <a class="nav-link" href="#">Graficación</a>
+                                            <a class="nav-link" href="WebForm5.aspx">Graficación</a>
                                           </li>
                                         </ul>
                                   </div>
@@ -73,6 +73,9 @@
                                   <div class="card-body">
                                     <h5 class="card-title">Pre-Order</h5>
                                     <p class="card-text">En el orden <strong>Pre-Order</strong> se recorre de la siguiente manera: raíz, subárbol izquierdo, subárbol derecho.
+                                    </p>
+                                      <p class="card-text fs-5 fw-bolder">
+                                          <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
                                       </p>
                                   </div>
                                   <asp:Image ID="Image1" class="card-img-bottom" runat="server" />  
@@ -83,6 +86,9 @@
                                   <div class="card-body">
                                     <h5 class="card-title">In-Order</h5>
                                     <p class="card-text">En el orden <strong>In-Order</strong> se recorre de la siguiente manera: subárbol izquierdo, raíz, subárbol derecho.</p>
+                                    <p class="card-text fs-5 fw-bolder">
+                                          <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
+                                    </p>
                                   </div>
                                   <asp:Image ID="Image2" class="card-img-bottom" runat="server" />
                             </div>
@@ -92,6 +98,9 @@
                                   <div class="card-body">
                                     <h5 class="card-title">Post-Order</h5>
                                     <p class="card-text">En el orden <strong>Post-Order</strong> se recorre de la siguiente manera: subárbol izquierdo, subárbol derecho, raíz.</p>
+                                    <p class="card-text fs-5 fw-bolder">
+                                          <asp:Label ID="Label3" runat="server" Text=""></asp:Label>
+                                    </p>
                                   </div>
                                   <asp:Image ID="Image3" class="card-img-bottom" runat="server" />
                             </div>

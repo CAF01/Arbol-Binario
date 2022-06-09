@@ -13,7 +13,9 @@ C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\ConsoleApp1\bin\Debug\Syst
 C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\ConsoleApp1\bin\Debug\System.Threading.Tasks.Extensions.dll
 C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\ConsoleApp1\bin\Debug\System.ValueTuple.dll
 C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\ConsoleApp1\bin\Debug\ClassAccesoDatos.pdb
+C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\ConsoleApp1\bin\Debug\ClassAccesoDatos.dll.config
 C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\ConsoleApp1\bin\Debug\ClassEntities.pdb
+C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\ConsoleApp1\bin\Debug\ClassEntities.dll.config
 C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\ConsoleApp1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\ConsoleApp1\bin\Debug\System.Buffers.xml
 C:\Users\Chris\Documents\C#\ArbolBinario_ProblemaTres\ConsoleApp1\bin\Debug\System.Memory.xml

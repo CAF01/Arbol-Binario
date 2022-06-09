@@ -1,5 +1,6 @@
 ﻿using ClassEntities;
-using System.Drawing;
+using System.IO;
+using System.Text.Json;
 
 namespace ClassDataAccess
 {
@@ -10,6 +11,7 @@ namespace ClassDataAccess
         private int contNodos=0;
         private int recorrer = 0;
         private int i= 0;
+
         private bool inicia = false;
 
         private Componente[] componentesPreOrder;
@@ -24,14 +26,40 @@ namespace ClassDataAccess
             //this.Inicio = null;
         }
 
+        public string RespaldarInformacion(string NombreArchivo)
+        {
+            string JsonFile=null;
+            if (this.Referencia!=null && contNodos>0)
+            {
+                Respaldo respaldo = new Respaldo() { Referencia=this.Referencia,contNodos=this.contNodos};
+                JsonFile=JsonSerializer.Serialize(respaldo);
+            }
+            return JsonFile;
+        }
+
+        public bool RestaurarInformacion(string JsonFile)
+        {
+            Respaldo respaldo = JsonSerializer.Deserialize<Respaldo>(JsonFile);
+            if(respaldo.Referencia!=null && respaldo.contNodos>0)
+            {
+                this.Referencia = respaldo.Referencia;
+                this.contNodos=respaldo.contNodos;
+                this.recorrer = 0;
+                this.i = 0;
+                this.inicia = true;
+                return true;
+            }
+            return false;
+        }
+
         public Nodo InsertarNodo(Nodo nuevoNodo, Nodo nodo)
         {
             Nodo temp;
             if(nodo==null)
             {
-                if(!inicia)
+                if(!this.inicia)
                 {
-                    inicia = true;
+                    this.inicia = true;
                     this.Referencia = nuevoNodo;
                 }
                 contNodos++;
@@ -45,7 +73,6 @@ namespace ClassDataAccess
             return nodo;
 
         }
-
         public Componente[] Transversa_preOrder(Nodo raiz, Transversa transversa)
         {
             if (recorrer == 0)
@@ -75,7 +102,6 @@ namespace ClassDataAccess
                 return this.imprimirComponentes(transversa);
             return null;
         }
-
         public Componente[] Transversa_inOrder(Nodo raiz, Transversa transversa)
         {
             if (recorrer == 0)
@@ -106,7 +132,6 @@ namespace ClassDataAccess
                 return this.imprimirComponentes(transversa);
             return null;
         }
-
         public Componente[] Transversa_postOrder(Nodo raiz,Transversa transversa)
         {
             if (recorrer == 0)
@@ -138,7 +163,6 @@ namespace ClassDataAccess
             return null;
 
         }
-
         public Componente BuscarNodo(Nodo raiz,int clave)
         {
             Nodo montado;
@@ -174,7 +198,6 @@ namespace ClassDataAccess
             }
             return encontrado;
         }
-
         public Nodo EliminarNodo(Nodo raiz, ref Componente componente)
         {
 
@@ -206,7 +229,7 @@ namespace ClassDataAccess
                     Refanterior = this.BuscarReferenciaAnteriorNodo(this.Referencia, componente);
                     if(Refanterior!=null)
                     {
-                        if(Refanterior.hijoIzquierdo.componente == componente)
+                        if(Refanterior.hijoIzquierdo.componente.Clave == componente.Clave)//actualizados - 08/06
                         {
                             Refanterior.hijoIzquierdo = raiz.hijoDerecho;
                             Refanterior.hijoIzquierdo.id = raiz.hijoIzquierdo.componente.Clave;
@@ -215,7 +238,7 @@ namespace ClassDataAccess
                     }
                     if(Refanterior!=null)
                     {
-                        if(Refanterior.hijoDerecho.componente == componente)
+                        if(Refanterior.hijoDerecho.componente.Clave == componente.Clave)//actualizados - 08/06
                         {
                             Refanterior.hijoDerecho = raiz.hijoDerecho;
                             Refanterior.hijoDerecho.id = Refanterior.hijoDerecho.componente.Clave;
@@ -230,7 +253,7 @@ namespace ClassDataAccess
                     Refanterior = this.BuscarReferenciaAnteriorNodo(this.Referencia, componente);
                     if (Refanterior != null && Refanterior.hijoIzquierdo!=null)
                     {
-                        if(Refanterior.hijoIzquierdo.componente == componente)
+                        if(Refanterior.hijoIzquierdo.componente.Clave == componente.Clave)
                         {
                             Refanterior.hijoIzquierdo = raiz.hijoIzquierdo;
                             Refanterior.hijoIzquierdo.id = Refanterior.hijoIzquierdo.componente.Clave;
@@ -239,7 +262,7 @@ namespace ClassDataAccess
                     }
                     if (Refanterior != null && Refanterior.hijoDerecho != null)
                     {
-                        if(Refanterior.hijoDerecho.componente == componente)
+                        if(Refanterior.hijoDerecho.componente.Clave == componente.Clave)
                         {
                             Refanterior.hijoDerecho = raiz.hijoIzquierdo;
                             Refanterior.hijoDerecho.id = Refanterior.hijoDerecho.componente.Clave;
@@ -271,9 +294,10 @@ namespace ClassDataAccess
                 }
 
             }
+            if(contNodos==0)//Ya no hay referencia sobre raiz original
+                inicia = false;
             return raiz;
         }
-
         public Nodo BuscarReferenciaAnteriorNodo(Nodo raiz,Componente componente)
         {
             Nodo referencia=null;
@@ -296,7 +320,6 @@ namespace ClassDataAccess
 
             return referencia;
         }
-
         public Componente BuscaMinimoValor(Nodo raiz)
         {
             Nodo Montado = null;
@@ -322,26 +345,24 @@ namespace ClassDataAccess
 
             return minimoComponente;
         }
+        //public Nodo BuscarUltimoNodo(Nodo raiz)
+        //{
+        //    if (raiz == null)
+        //        return null;
 
-        public Nodo BuscarUltimoNodo(Nodo raiz)
-        {
-            if (raiz == null)
-                return null;
+        //    this.Referencia = raiz;
+        //    while (this.Referencia.hijoIzquierdo != null)
+        //    {
+        //        this.Referencia = this.Referencia.hijoIzquierdo;
+        //    }
+        //    while(this.Referencia.hijoDerecho!=null)
+        //    {
+        //        this.Referencia=this.Referencia.hijoDerecho;
+        //    }
 
-            this.Referencia = raiz;
-            while (this.Referencia.hijoIzquierdo != null)
-            {
-                this.Referencia = this.Referencia.hijoIzquierdo;
-            }
-            while(this.Referencia.hijoDerecho!=null)
-            {
-                this.Referencia=this.Referencia.hijoDerecho;
-            }
+        //    return this.Referencia;
 
-            return this.Referencia;
-
-        }
-
+        //}
         public Componente[] imprimirComponentes(Transversa transversa)
         {
             switch (transversa)
@@ -382,22 +403,6 @@ namespace ClassDataAccess
             }
             return null;
         }
-
-
-        //public void GraficarArbol(Nodo raiz)
-        //{
-            //Bitmap bmp = new Bitmap(800,400);
-            //int x1 = 0, x2 = 0;
-            //Graphics g = Graphics.FromImage(bmp);
-            //Pen lapiz = new Pen(Color.Blue, 2);
-
-
-            //if(raiz.componente!=null)
-            //{
-
-            //}
-        //}
-
         public Graficador[] RecorrerArbol(Nodo raiz,bool dir,float x,float y)
         {
             Nodo referencia = raiz;
@@ -415,38 +420,38 @@ namespace ClassDataAccess
                 graficador[i].y1 = y;
                 if (!dir)
                 {
-                    x -= 65;
+                    x -= 240;
                     graficador[i].x2 = x;
                 }
                     
                 if (dir)
                 {
-                    x += 65;
+                    x += 240;
                     graficador[i].x2 = x;
                 }
-                y += 60;
+                y += 115;
 
                 graficador[i].y2 = y;
                 if(i==0)
                 {
-                    x += 65;
-                    y -= 60;
+                    x += 240;
+                    y -= 115;
                     graficador[i].y2 = y;
                     graficador[i].x2 = x;
                 }
                 if(this.Referencia.hijoIzquierdo!=null)
                     if(this.Referencia.hijoIzquierdo.id==raiz.id)
                     {
-                        x -= 155;
-                        y += 70;
+                        x -= 325;
+                        y += 170;
                         graficador[i].y2 = y;
                         graficador[i].x2 = x;
                     }
                 if(this.Referencia.hijoDerecho!=null)
                     if(this.Referencia.hijoDerecho.id==raiz.id)
                     {
-                        x += 155;
-                        y += 70;
+                        x += 325;
+                        y += 170;
                         graficador[i].y2 = y;
                         graficador[i].x2 = x;
                     }
@@ -463,6 +468,8 @@ namespace ClassDataAccess
                 }
 
             }
+            if (i == contNodos)
+                i = 0;
             return graficador;
 
         }
