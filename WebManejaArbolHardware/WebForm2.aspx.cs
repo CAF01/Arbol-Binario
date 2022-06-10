@@ -75,11 +75,15 @@ namespace WebManejaArbolHardware
 
         //public void PruebaXML(string NomArch)
         //{
-            //DataSet dataSet = new DataSet();
-            //dataSet.Tables[] = new DataTable();
-            //dataSet.Tables[0].Rows.Add("hola");
-            //string a=Server.MapPath("~/Backups/" + NomArch + ".xml");
-            //File.WriteAllText(Server.MapPath(), JsonFile);
+        //    DataSet dataSet = new DataSet();
+        //    //dataSet.Tables[0] = new DataTable();
+        //    dataSet.Tables[0].Rows.Add("hola");
+        //    string a = Server.MapPath("~/Backups/" + NomArch + ".xml");
+
+
+        //    //File.WriteAllText(Server.MapPath(), JsonFile);
+
+
         //}
 
         protected void Button2_Click(object sender, EventArgs e)//Guardar un archivo de datos

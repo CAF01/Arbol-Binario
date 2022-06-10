@@ -31,8 +31,8 @@ namespace WebManejaArbolHardware
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if (!String.IsNullOrEmpty(TB1.Text) || !String.IsNullOrEmpty(TB2.Text) || !String.IsNullOrEmpty(TB3.Text) ||
-                !String.IsNullOrEmpty(TB4.Text) || !String.IsNullOrEmpty(TB5.Text) || !String.IsNullOrEmpty(TB6.Text))
+            if (!String.IsNullOrEmpty(TB1.Text) && !String.IsNullOrEmpty(TB2.Text) && !String.IsNullOrEmpty(TB3.Text) &&
+                !String.IsNullOrEmpty(TB4.Text) && !String.IsNullOrEmpty(TB5.Text) && !String.IsNullOrEmpty(TB6.Text))
             {
                 string path1 = "";
                 string path2 = "";
@@ -111,7 +111,7 @@ namespace WebManejaArbolHardware
                     {
                         imgName = FileUpload2.FileName;
                         imgSize = FileUpload2.PostedFile.ContentLength;
-                        if (imgSize > 102400)
+                        if (imgSize > 1002400)
                         {
                             exito = false;
                             this.EnviaAlertas("¡Error!", "La segunda imagen es demasiado grande", "error");

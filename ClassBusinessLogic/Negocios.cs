@@ -11,7 +11,7 @@ namespace ClassBusinessLogic
             this.Arbol = new Arbol();
         }
 
-        public bool ContieneValores()
+        public bool ContieneValores()//Verifica si el arbol contiene una raiz
         {
             bool flag;
             _ = this.Arbol.Referencia != null ? flag=true : flag=false;
@@ -68,7 +68,7 @@ namespace ClassBusinessLogic
             {
                 bool bandera = false;
                 Nodo nodoReferencia = this.Arbol.Referencia;
-
+                //Se verifica si el componente a eliminar corresponde al de la raiz
                 _ = nodoReferencia.id == componente.Clave ? bandera = true : bandera = false;
 
                 if (this.Arbol.BuscarNodo(nodoReferencia, componente.Clave) != null)
@@ -76,6 +76,7 @@ namespace ClassBusinessLogic
                     Nodo DevuelveRaiz = this.Arbol.EliminarNodo(nodoReferencia, ref componente);
                     if (bandera)
                     {
+                        //de ser el nodo raiz, se cambia por el que toma su lugar.
                         this.Arbol.Referencia = DevuelveRaiz;
                     }
                     return true;

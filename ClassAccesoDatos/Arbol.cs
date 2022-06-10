@@ -6,27 +6,26 @@ namespace ClassDataAccess
 {
     public class Arbol
     {
-        public Nodo Referencia;
+        public Nodo Referencia; //Se monta sobra la raiz
 
         private int contNodos=0;
         private int recorrer = 0;
         private int i= 0;
 
-        private bool inicia = false;
+        private bool inicia = false; //Valida si raiz ya tiene un valor
 
         private Componente[] componentesPreOrder;
         private Componente[] componentesInOrder;
         private Componente[] componentesPostOrder;
 
-        private Graficador[] graficador;
-
+        private Graficador[] graficador;//Arreglo de componentescon propiedades de coordenada para graficar
         public Arbol()
         {
             this.Referencia = null;
             //this.Inicio = null;
         }
 
-        public string RespaldarInformacion(string NombreArchivo)
+        public string RespaldarInformacion(string NombreArchivo)//Serializa =>obtiene string en formato json
         {
             string JsonFile=null;
             if (this.Referencia!=null && contNodos>0)
@@ -37,7 +36,7 @@ namespace ClassDataAccess
             return JsonFile;
         }
 
-        public bool RestaurarInformacion(string JsonFile)
+        public bool RestaurarInformacion(string JsonFile)//Recupera los datos de json e inserta los valores obtenidos
         {
             Respaldo respaldo = JsonSerializer.Deserialize<Respaldo>(JsonFile);
             if(respaldo.Referencia!=null && respaldo.contNodos>0)
@@ -55,7 +54,7 @@ namespace ClassDataAccess
         public Nodo InsertarNodo(Nodo nuevoNodo, Nodo nodo)
         {
             Nodo temp;
-            if(nodo==null)
+            if(nodo==null)//valida la raiz 
             {
                 if(!this.inicia)
                 {
@@ -66,11 +65,11 @@ namespace ClassDataAccess
                 return temp = nuevoNodo;
             }
 
-            if(nuevoNodo.id < nodo.id)
+            if(nuevoNodo.id < nodo.id)//recursivo hacia la izquierda
                 nodo.hijoIzquierdo = InsertarNodo(nuevoNodo, nodo.hijoIzquierdo);
             if (nuevoNodo.id > nodo.id)
                 nodo.hijoDerecho = InsertarNodo(nuevoNodo, nodo.hijoDerecho);
-            return nodo;
+            return nodo;//devuelve raiz
 
         }
         public Componente[] Transversa_preOrder(Nodo raiz, Transversa transversa)
@@ -165,15 +164,15 @@ namespace ClassDataAccess
         }
         public Componente BuscarNodo(Nodo raiz,int clave)
         {
-            Nodo montado;
+            Nodo montado;//referencia
             Componente encontrado=null;
             if (raiz != null)
             {
-                if (raiz.id == clave)
+                if (raiz.id == clave)//verifica clave de raiz
                     encontrado = raiz.componente;
                 else
                 {
-                    if(raiz.id > clave)
+                    if(raiz.id > clave)//recursivo
                     {
                         if(raiz.hijoIzquierdo!=null)
                         {
@@ -184,7 +183,7 @@ namespace ClassDataAccess
                             return encontrado;
                         
                     }
-                    if (raiz.id < clave)
+                    if (raiz.id < clave)//recursivo
                     {
                         if (raiz.hijoDerecho != null)
                         {
@@ -201,7 +200,7 @@ namespace ClassDataAccess
         public Nodo EliminarNodo(Nodo raiz, ref Componente componente)
         {
 
-            if (raiz == null || componente==null)
+            if (raiz == null || componente==null)//valida que por referencia componente contenga valor y raiz no sea null
                 return null;
             if(componente!=null)
                 if (componente.Clave < raiz.id)
@@ -248,7 +247,7 @@ namespace ClassDataAccess
                     //Refanterior.hijoDerecho = raiz.hijoDerecho; ESTE ES EL ORIGINAL
                     //Refanterior.hijoDerecho.hijoDerecho = otro;
                 }
-                if(raiz.hijoDerecho==null)
+                if(raiz.hijoDerecho==null)//se busca al padre del nodo a eliminar
                 {
                     Refanterior = this.BuscarReferenciaAnteriorNodo(this.Referencia, componente);
                     if (Refanterior != null && Refanterior.hijoIzquierdo!=null)
@@ -272,7 +271,7 @@ namespace ClassDataAccess
                     //Refanterior.hijoIzquierdo = raiz.hijoIzquierdo; ORIGINAL
                 }
                 componente = null;
-                contNodos--;
+                contNodos--;//reduce contador
                 if (raiz.hijoIzquierdo == null)
                     return raiz.hijoDerecho;
                 if(raiz.hijoDerecho == null)
@@ -363,7 +362,7 @@ namespace ClassDataAccess
         //    return this.Referencia;
 
         //}
-        public Componente[] imprimirComponentes(Transversa transversa)
+        public Componente[] imprimirComponentes(Transversa transversa)//con un Enumerable switchea los valores disponibles
         {
             switch (transversa)
             {
@@ -404,12 +403,12 @@ namespace ClassDataAccess
             return null;
         }
         public Graficador[] RecorrerArbol(Nodo raiz,bool dir,float x,float y)
-        {
+        {//Recorrido del arbol en forma PreOrder, se establecen las coordenadas "estimadas"
             Nodo referencia = raiz;
             if (i == 0 && raiz != null)
             {
                 graficador = new Graficador[contNodos];
-                //la mitad de la pantalla, deberia ser el centro
+                //la mitad de la pantalla deberia ser el centro
             }
 
             if (contNodos > 0 && i < contNodos)

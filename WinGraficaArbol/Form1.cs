@@ -58,22 +58,22 @@ namespace WinGraficaArbol
 
             
 
-            Pen lap = new Pen(Color.CornflowerBlue, 2);
-            Pen lazo = new Pen(Color.Black, 2);
-            Brush brush = new SolidBrush(Color.Red);
+            //Pen lap = new Pen(Color.CornflowerBlue, 2);
+            //Pen lazo = new Pen(Color.Black, 2);
+            //Brush brush = new SolidBrush(Color.Red);
 
-            int x=70, y = 70;
-            Componente[] cadenas = arbol.Transversa_inOrder(nodo, Transversa.InOrder);
-            foreach (var item in cadenas)
-            {
-                papel.DrawRectangle(lap, new Rectangle(x, y, 100, 40));
-                papel.DrawString(item.Clave.ToString(), new Font("Arial", 12), brush, x + 3, y + 1);
-                papel.DrawString(item.Modelo.ToString(), new Font("Arial", 10), brush, x + 3, y + 20);
+            //int x=70, y = 70;
+            //Componente[] cadenas = arbol.Transversa_inOrder(nodo, Transversa.InOrder);
+            //foreach (var item in cadenas)
+            //{
+            //    papel.DrawRectangle(lap, new Rectangle(x, y, 100, 40));
+            //    papel.DrawString(item.Clave.ToString(), new Font("Arial", 12), brush, x + 3, y + 1);
+            //    papel.DrawString(item.Modelo.ToString(), new Font("Arial", 10), brush, x + 3, y + 20);
 
-                if (item != cadenas[cadenas.Length-1])
-                    papel.DrawLine(lazo, x+100, y + 15, x + 120, y + 15);
-                x += 120;
-            }
+            //    if (item != cadenas[cadenas.Length-1])
+            //        papel.DrawLine(lazo, x+100, y + 15, x + 120, y + 15);
+            //    x += 120;
+            //}
 
 
             //Graficador[] grafo = arbol.RecorrerArbol(nodo, false, 350, 80);
