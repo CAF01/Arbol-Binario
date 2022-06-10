@@ -86,7 +86,7 @@ namespace WebManejaArbolHardware
                     {
                         imgName=FileUpload1.FileName;
                         imgSize = FileUpload1.PostedFile.ContentLength;
-                        if(imgSize>102400)
+                        if(imgSize>1002400)
                         {
                             exito = false;
                             this.EnviaAlertas("¡Error!", "La primera imagen es demasiado grande", "error");

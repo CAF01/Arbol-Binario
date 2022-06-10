@@ -63,7 +63,9 @@ namespace WebManejaArbolHardware
                     {
                         this.EnviaAlertas("Oops!", "No se encontró ningún componente con la clave " + clave, "info");
 
-                        TBClave.Text = ""; TBMarca.Text = ""; TBDesc.Text = ""; TBModelo.Text = ""; TBSerie.Text = ""; TBCategoria.Text = ""; 
+                        TBClave.Text = ""; TBMarca.Text = ""; TBDesc.Text = ""; TBModelo.Text = ""; TBSerie.Text = ""; TBCategoria.Text = "";
+                        Image1.ImageUrl = "";
+                        Image2.ImageUrl = "";
                     }
                 }
                 else

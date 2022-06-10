@@ -426,32 +426,32 @@ namespace ClassDataAccess
                     
                 if (dir)
                 {
-                    x += 240;
+                    x += 300;
                     graficador[i].x2 = x;
                 }
-                y += 115;
+                y += 200;
 
                 graficador[i].y2 = y;
                 if(i==0)
                 {
                     x += 240;
-                    y -= 115;
+                    y -= 200;
                     graficador[i].y2 = y;
                     graficador[i].x2 = x;
                 }
                 if(this.Referencia.hijoIzquierdo!=null)
                     if(this.Referencia.hijoIzquierdo.id==raiz.id)
                     {
-                        x -= 325;
-                        y += 170;
+                        x -= 400;
+                        y += 225;
                         graficador[i].y2 = y;
                         graficador[i].x2 = x;
                     }
                 if(this.Referencia.hijoDerecho!=null)
                     if(this.Referencia.hijoDerecho.id==raiz.id)
                     {
-                        x += 325;
-                        y += 170;
+                        x += 400;
+                        y += 325;
                         graficador[i].y2 = y;
                         graficador[i].x2 = x;
                     }

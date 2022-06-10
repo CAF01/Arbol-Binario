@@ -16,14 +16,14 @@ namespace WebManejaArbolHardware
         Negocios Negocios;
         protected void Page_Load(object sender, EventArgs e)
         {
-            Bitmap bitmap = new Bitmap(3000, 3000);
+            Bitmap bitmap = new Bitmap(5000, 4500);
 
             Graphics g = Graphics.FromImage(bitmap);
 
             if (Session["Negocios"] != null)
             {
                 this.Negocios = (Negocios)Session["Negocios"];
-                this.ImprimirArbol(this.Negocios.ObtenerCoordenadas(1400,150), g, bitmap.Width, bitmap.Height);
+                this.ImprimirArbol(this.Negocios.ObtenerCoordenadas(2500,150), g, bitmap.Width, bitmap.Height);
                 Response.ContentType = "image/jpeg";
 
                 bitmap.Save(Response.OutputStream, ImageFormat.Jpeg);
@@ -39,14 +39,15 @@ namespace WebManejaArbolHardware
             Pen lap = new Pen(Color.CornflowerBlue, 2);
             Pen lazo = new Pen(Color.Black, 2);
             Brush brush = new SolidBrush(Color.Red);
+            Brush brush1 = new SolidBrush(Color.BlueViolet);
 
-            x = 1400;
-            y = 150;
             foreach (var item in componentes)
             {
-                graphics.DrawRectangle(lap, new Rectangle(Convert.ToInt32(item.x2), Convert.ToInt32(item.y2), 130, 80));
+                graphics.DrawRectangle(lap, new Rectangle(Convert.ToInt32(item.x2), Convert.ToInt32(item.y2), 200, 100));
                 graphics.DrawLine(lazo, item.x1, item.y1, item.x2, item.y2);
                 graphics.DrawString(item.componente.Clave.ToString(), new Font("Arial", 25), brush, item.x2, item.y2);
+                graphics.DrawString(String.Format("Modelo: {0}",item.componente.Modelo.ToString()), new Font("Arial", 20), brush1, item.x2, item.y2 + 30);
+                graphics.DrawString(String.Format("Marca: {0}", item.componente.Marca.ToString()), new Font("Arial", 20), brush1, item.x2, item.y2 + 60);
             }
         }
     }

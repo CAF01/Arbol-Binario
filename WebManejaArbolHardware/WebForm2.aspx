@@ -177,7 +177,7 @@
                             <div class="mb-3">
 
                                 <div>
-                                    <h3 class="display-3 text-info fs-2 fw-bolder">Agregar componentes de Hardware</h3>
+                                    <%--<h3 class="display-3 text-info fs-2 fw-bolder">Agregar componentes de Hardware</h3>--%>
                                 </div>
                                 <div class="text-center">                               
 
@@ -186,13 +186,14 @@
                                                     Novedad
                                               </div>
                                               <div class="card-body">
-                                                    <h5 class="card-title">Special title treatment</h5>
-                                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                    <h5 class="card-title">¡Añade componentes!</h5>
+                                                    <p class="card-text">Completa los campos, agregando información importante sobre los componentes e incluso asigna imagenes.</p>
                                                     <a href="WebForm1.aspx" class="btn btn-primary">Visitar</a>
                                               </div>
                                               <div class="card-footer text-muted">
                                                  8 days ago
                                               </div>
+                                        <br />
                                     </div>
 
                                 </div>
@@ -204,7 +205,7 @@
                             <div class="mb-3">
 
                                 <div>
-                                    <h3 class="display-3 text-info fs-2 fw-bolder">Ver listado de componentes</h3>
+                                    <%--<h3 class="display-3 text-info fs-2 fw-bolder">Ver listado de componentes</h3>--%>
                                 </div>
                                 <div class="text-center">                               
 
@@ -213,13 +214,14 @@
                                                     Novedad
                                               </div>
                                               <div class="card-body">
-                                                    <h5 class="card-title">Special title treatment</h5>
-                                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                    <h5 class="card-title">¡Consulta los componentes registrados!</h5>
+                                                    <p class="card-text">Observa los diferentes recorridos que tiene el árbol binario.</p>
                                                     <a href="WebForm3.aspx" class="btn btn-success">Visitar</a>
                                               </div>
                                               <div class="card-footer text-muted">
                                                  5 days ago
                                               </div>
+                                        <br />
                                     </div>
 
                                 </div>
@@ -230,7 +232,7 @@
                             <div class="mb-3">
 
                                 <div>
-                                    <h3 class="display-3 text-info fs-2 fw-bolder">Busqueda de componentes</h3>
+                                    <%--<h3 class="display-3 text-info fs-2 fw-bolder">Busqueda de componentes</h3>--%>
                                 </div>
                                 <div class="text-center">                               
 
@@ -239,13 +241,14 @@
                                                     Novedad
                                               </div>
                                               <div class="card-body">
-                                                    <h5 class="card-title">Special title treatment</h5>
-                                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                    <h5 class="card-title">¡Busca o elimina componentes!</h5>
+                                                    <p class="card-text">Ingresa la clave de algun componente y verifica la información disponible.</p>
                                                     <a href="WebForm4.aspx" class="btn btn-danger">Visitar</a>
                                               </div>
                                               <div class="card-footer text-muted">
                                                  2 days ago
                                               </div>
+                                        <br />
                                     </div>
 
                                 </div>
@@ -256,7 +259,7 @@
                             <div class="mb-3">
 
                                 <div>
-                                    <h3 class="display-3 text-info fs-2 fw-bolder">Gráfico de componentes</h3>
+                                    <%--<h3 class="display-3 text-info fs-2 fw-bolder">Gráfico de componentes</h3>--%>
                                 </div>
                                 <div class="text-center">                               
 
@@ -265,13 +268,14 @@
                                                     Novedad
                                               </div>
                                               <div class="card-body">
-                                                    <h5 class="card-title">Special title treatment</h5>
-                                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                                    <h5 class="card-title">¡Consulta el gráfico del árbol binario!</h5>
+                                                    <p class="card-text">Ve un agradable y dinamico gráfico de componentes.</p>
                                                     <a href="WebForm5.aspx" class="btn btn-warning">Visitar</a>
                                               </div>
                                               <div class="card-footer text-muted">
                                                  Today
                                               </div>
+                                        <br />
                                     </div>
 
                                 </div>

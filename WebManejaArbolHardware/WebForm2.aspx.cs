@@ -1,6 +1,7 @@
 ﻿using ClassBusinessLogic;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Web.UI.WebControls;
 
@@ -11,6 +12,7 @@ namespace WebManejaArbolHardware
         Negocios Negocios;
         protected void Page_Load(object sender, EventArgs e)
         {
+            //this.PruebaXML("archivito");
             if (!IsPostBack)
             {
                 if (Session["Negocios"] != null)
@@ -45,7 +47,7 @@ namespace WebManejaArbolHardware
             }
         }
 
-        protected void LocalizarArchivos()
+        protected void LocalizarArchivos()//Obtener Archivos de Folder Backups
         {
             string[] filesLoc = Directory.GetFiles(Server.MapPath("~/Backups/"));
             List<ListItem> files = new List<ListItem>();
@@ -71,7 +73,14 @@ namespace WebManejaArbolHardware
             
         }
 
-
+        //public void PruebaXML(string NomArch)
+        //{
+            //DataSet dataSet = new DataSet();
+            //dataSet.Tables[] = new DataTable();
+            //dataSet.Tables[0].Rows.Add("hola");
+            //string a=Server.MapPath("~/Backups/" + NomArch + ".xml");
+            //File.WriteAllText(Server.MapPath(), JsonFile);
+        //}
 
         protected void Button2_Click(object sender, EventArgs e)//Guardar un archivo de datos
         {
